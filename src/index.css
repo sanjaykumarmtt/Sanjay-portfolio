@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-prim{
+  background-color: rgb(85 81 227);
+}
+.bg-secondary{
+  background-color: #2b2d77;
+}
+header ul li{
+  @apply px-3 hover:scale-110 duration-500
+}
+
+.mobil-nav {
+  @apply fixed justify-self-end h-1/3 top-7 pt-5 w-48
+   bg-white/5 border-2 border-white shadow-md shadow-black backdrop-blur-md overflow-hidden
+  ;
+}
+.mobil-nav li{
+  @apply text-center h-full  hover:scale-110 duration-500
+}
+.project-desc{
+  @apply absolute left-0 right-0 bottom-0 top-0 bg-secondary opacity-0 duration-500 hover:opacity-100
+}
+.butn{
+  @apply border-white hover:border-2 px-3 py-2 bg-prim rounded-sm
+}
+html{
+  scroll-behavior: smooth;
+}
+.input1{
+    @apply border-b text-white text-center placeholder-white bg-transparent w-72 h-12 border-white focus:outline-white border-spacing-2 flex flex-col  hover:scale-95 duration-700
+}
+.input2{
+  @apply  border-2 text-white text-center placeholder-white bg-transparent w-72 h-28 border-white focus:outline-white border-spacing-2 flex flex-col  hover:scale-95 duration-700
+}
+.condbox{
+  @apply flex flex-col justify-center items-center h-[400px] w-[330px] md:w-[400px] shadow-black
+        relative bg-white/10 border-2 border-white rounded-xl shadow-lg backdrop-blur-md overflow-hidden
+}
+@media(max-width: 768px){
+.mobil-only{
+  @apply mb-10
+}
+}
