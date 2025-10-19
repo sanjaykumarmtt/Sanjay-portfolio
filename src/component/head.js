@@ -6,19 +6,17 @@ function Heade() {
   var [mobil, setmobil] = useState(false);
   const [showText, setShowText] = useState(true);
 
-  // டெக்ஸ்ட் தோன்றி மறையும் அனிமேஷனுக்கான ஸ்பிரிங் பண்புகள்
   const propse = useSpring({
-    opacity: showText ? 1 : 0, // showText true ஆக இருந்தால், opacity 1 ஆக இருக்கும், இல்லையென்றால் 0
-    from: { opacity: 0 }, // அனிமேஷன் 0 opacity-யில் இருந்து தொடங்கும்
-    config: { duration: 1000 }, // அனிமேஷன் 1000 மில்லி செகண்டுகள் (1 வினாடி) நீடிக்கும்
+    opacity: showText ? 1 : 0, 
+    from: { opacity: 0 }, 
+    config: { duration: 1000 },
   });
 
-  // ஒவ்வொரு 2 வினாடிக்கும் டெக்ஸ்ட்-ஐ மாற்றுவதற்கு (காட்டுவது/மறைப்பது)
   useEffect(() => {
     const interval = setInterval(() => {
       setShowText(prevShowText => !prevShowText);
-    }, 2000); // 2000 மில்லி செகண்டுகள் (2 வினாடிகள்) இடைவெளியில் இயங்கும்
-    return () => clearInterval(interval); // componentWillUnmount போன்று interval-ஐ சுத்தம் செய்யும்
+    }, 2000); 
+    return () => clearInterval(interval);
   }, []);
   return (
     <header className="flex bg-prim justify-between px-5 py-5">
